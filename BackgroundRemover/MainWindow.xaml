@@ -1,0 +1,57 @@
+﻿<Window x:Class="BackgroundRemover.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BackgroundRemover"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Browse Button -->
+        <Button x:Name="BrowseButton" 
+             Content="Browse Image" 
+             Click="BrowseButton_Click"
+             Padding="10 5"
+             HorizontalAlignment="Left"/>
+
+        <!-- Original Image -->
+        <GroupBox Grid.Row="1" Header="Original Image" Margin="0 10">
+            <ScrollViewer>
+                <Image x:Name="OriginalImage" Stretch="Uniform"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Height="500" Width="500"/>
+            </ScrollViewer>
+        </GroupBox>
+
+        <!-- Process Button -->
+        <Button x:Name="ProcessButton" 
+             Grid.Row="2" 
+             Content="Remove Background" 
+             Click="ProcessButton_Click"
+             Margin="0 10"
+             Padding="10 5"
+             HorizontalAlignment="Left"
+             IsEnabled="False"/>
+
+        <!-- Status Text -->
+        <TextBlock x:Name="StatusText" 
+                Grid.Row="2"
+                Margin="150 0 0 0"
+                VerticalAlignment="Center"
+                TextWrapping="Wrap"/>
+
+        <!-- Result Image -->
+        <GroupBox Grid.Row="3" Header="Result (No Background)" Margin="0 10">
+            <ScrollViewer>
+                <Image x:Name="ResultImage" Stretch="Uniform"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Height="500" Width="500"/>
+            </ScrollViewer>
+        </GroupBox>
+    </Grid>
+</Window>
